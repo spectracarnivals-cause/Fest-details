@@ -41,11 +41,50 @@ body {
 body::after {
   content: '';
   position: fixed; inset: 0; pointer-events: none; z-index: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   opacity: 0.038; mix-blend-mode: overlay;
 }
 
 /* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  padding: 22px 60px;
+  display: flex; justify-content: space-between; align-items: center;
+  background: linear-gradient(to bottom, rgba(8,3,4,0.96) 50%, transparent);
+  transition: background 0.4s;
+}
+.nav-logo {
+  display: flex; flex-direction: column; gap: 2px;
+  text-decoration: none;
+}
+.nav-logo-main {
+  font-family: 'Marcellus SC', serif;
+  font-size: 15px; letter-spacing: 0.25em;
+  color: var(--rose);
+}
+.nav-logo-sub {
+  font-size: 11px; letter-spacing: 0.5em; text-transform: uppercase;
+  color: var(--text-dim);
+}
+.nav-right {
+  display: flex; gap: 8px;
+}
+.nav-btn {
+  padding: 10px 22px;
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 14px; letter-spacing: 0.25em; text-transform: uppercase;
+  text-decoration: none; cursor: pointer; border: none;
+  transition: all 0.3s;
+}
+.nav-btn-day1 {
+  background: var(--crimson); color: var(--cream);
+}
+.nav-btn-day1:hover { background: var(--crimson-l); }
+.nav-btn-day2 {
+  background: transparent;
+  border: 1px solid rgba(200,149,42,0.45); color: var(--gold-l);
+}
+.nav-btn-day2:hover { border-color: var(--gold-l); background: rgba(200,149,42,0.08); }
 
 /* ── HERO ── */
 .hero {
@@ -461,46 +500,11 @@ section { position: relative; z-index: 1; }
     flex: 1.45;
     position: relative; overflow: hidden;
   }
-.closing-webpanel {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-
-/* IMAGE CONTAINER CONTROL */
-.closing-img-col {
-  flex: 1.45;
-  position: relative;
-  overflow: hidden;
-  min-height: 420px;
-}
-
-/* RESPONSIVE HEIGHTS */
-@media (max-width: 1200px) {
-  .closing-img-col {
-    min-height: 380px;
+  .closing-webpanel {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center;
+    display: block;
   }
-}
-
-@media (max-width: 900px) {
-  .closing-layout {
-    flex-direction: column;
-  }
-
-  .closing-img-col {
-    width: 100%;
-    height: 320px;
-    min-height: unset;
-  }
-}
-
-@media (max-width: 520px) {
-  .closing-img-col {
-    height: 240px;
-  }
-}
   .closing-text-col {
     flex: 1;
     display: flex; flex-direction: column;
