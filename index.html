@@ -496,68 +496,10 @@ section { position: relative; z-index: 1; }
   .closing-layout {
     display: flex; min-height: 580px;
   }
-  /* ── FLOATING IMAGE (DESKTOP DEFAULT) ── */
-.closing-overlay-img {
-  position: absolute;
-  top: 5%;
-  right: 5%;
-
-  width: 38%;
-  max-width: 420px;
-
-  border-radius: 14px;
-  box-shadow: 0 30px 70px rgba(0,0,0,0.45);
-
-  z-index: 10;
-  transition: all 0.4s ease;
-}
-
-/* ── TABLET (MEDIUM SCREENS) ── */
-@media (max-width: 1024px) {
-  .closing-overlay-img {
-    width: 50%;
-    top: 6%;
-    right: 4%;
-  }
-}
-
-/* ── MOBILE (STACKED LAYOUT) ── */
-@media (max-width: 768px) {
-
-  .closing-layout {
-    flex-direction: column;
-  }
-
   .closing-img-col {
-    height: auto;
+    flex: 1.45;
+    position: relative; overflow: hidden;
   }
-
-  .closing-webpanel {
-    height: 300px;
-  }
-
-  .closing-overlay-img {
-    position: relative;   /* key change */
-    top: auto;
-    right: auto;
-
-    width: 90%;
-    max-width: none;
-
-    margin: -80px auto 20px; /* overlap effect */
-    display: block;
-
-    border-radius: 12px;
-  }
-}
-
-/* ── SMALL MOBILE ── */
-@media (max-width: 480px) {
-  .closing-overlay-img {
-    width: 92%;
-    margin: -60px auto 20px;
-  }
-}
   .closing-webpanel {
     width: 100%; height: 100%;
     object-fit: cover; object-position: center;
@@ -852,12 +794,8 @@ footer {
 <section class="closing">
   <div class="closing-layout">
     <div class="closing-img-col">
-  <!-- Background image -->
-  <img class="closing-webpanel" src="Webpanel_001.png">
-  <!-- Floating overlay image -->
-  <img class="closing-overlay-img" src="images/retail-zone.png">
-</div>
-    
+       <img class="closing-webpanel" src="Webpanel_001.png" alt="Beats for a Cause — Fashion, Retail Street, Concert">
+    </div>
     <div class="closing-text-col">
       <div class="closing-text-wrap">
         <span class="s-label">The Full Experience</span>
